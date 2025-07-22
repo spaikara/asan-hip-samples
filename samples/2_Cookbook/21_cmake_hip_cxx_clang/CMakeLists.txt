@@ -22,8 +22,8 @@ cmake_minimum_required(VERSION 3.21.3)
 
 set(CMAKE_CXX_COMPILER ${HIP_HIPCC_EXECUTABLE})
 set(CMAKE_CXX_LINKER   ${HIP_HIPCC_EXECUTABLE})
-set(CMAKE_CXX_FLAGS "-fsanitize=address --offload-arch=gfx90a:xnack+ -shared-libsan")
-
+set(CMAKE_CXX_FLAGS "-fsanitize=address -shared-libsan")
+set(GPU_TARGETS "gfx90a:xnack+")
 
 project(cmake_cxx_amdclang++_test
         DESCRIPTION "Verifies CXX Language Support with amdclang++"
