@@ -32,7 +32,8 @@ endif()
 
 set(CMAKE_CXX_COMPILER "${ROCM_PATH}/llvm/bin/clang++")
 
-set(CMAKE_CXX_FLAGS "-fsanitize=address --offload-arch=gfx90a:xnack+ -shared-libsan")
+set(CMAKE_CXX_FLAGS "-fsanitize=address -shared-libsan")
+set(GPU_TARGETS "gfx90a:xnack+")
 
 # Find hiprtc
 find_package(hiprtc REQUIRED)
