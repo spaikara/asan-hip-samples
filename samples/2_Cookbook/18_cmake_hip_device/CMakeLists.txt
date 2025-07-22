@@ -26,7 +26,8 @@ include_directories(../../common)
 
 set(CMAKE_CXX_COMPILER ${HIP_HIPCC_EXECUTABLE})
 set(CMAKE_CXX_LINKER   ${HIP_HIPCC_EXECUTABLE})
-set(CMAKE_CXX_FLAGS "-fsanitize=address --offload-arch=gfx90a:xnack+ -shared-libsan")
+set(CMAKE_CXX_FLAGS "-fsanitize=address -shared-libsan")
+set(GPU_TARGETS "gfx90a:xnack+")
 
 
 # Find hip
